@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Gráfica Cristalina - Décadas de confiança em impressão, comunicação visual e acabamento de precisão.">
+    <title>Gráfica Cristalina | Tradição & Precisão em Impressão</title>
+
+    <!-- Google Fonts: Inter e Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-primary': '#2E466D',
+                        'accent-primary-hover': '#243858',
+                        'accent-mid': '#2782C4',
+                        'accent-light': '#60B3E3',
+                        'accent-subtle': 'rgba(96,179,227,0.12)',
+                        'surface-page': '#FFFFFF',
+                        'surface-card': '#F4F7FB',
+                        'surface-footer': '#1E2E45',
+                        'text-primary': '#1A2535',
+                        'text-secondary': '#4A5568',
+                        'text-muted': '#94A3B8',
+                        'border-subtle': '#EEF2F7',
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", 'serif'],
+                        body: ["'DM Sans'", 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'card': '10px',
+                        'button': '8px',
+                    },
+                    backgroundImage: {
+                        'gradient-brand': 'linear-gradient(90deg, #2E466D 0%, #2782C4 50%, #60B3E3 100%)',
+                        'paper-texture': "url(\"data:image/svg+xml,%3Csvg width='100' height='12' viewBox='0 0 100 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6h100' stroke='%232E466D' stroke-width='0.5' fill='none' fill-opacity='0.03' stroke-opacity='0.03'/%3E%3C/svg%3E\")",
+                    },
+                    boxShadow: {
+                        'card': '0 1px 3px rgba(46,70,109,0.08), 0 1px 2px rgba(46,70,109,0.04)',
+                        'hover': '0 4px 16px rgba(46,70,109,0.14)',
+                        'float': '0 8px 32px rgba(46,70,109,0.16)',
+                        'hero-sheet': '12px 16px 40px rgba(46,70,109,0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Basic Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        .font-display {
+            font-family: 'Playfair Display', serif !important;
+            font-weight: 700 !important;
+        }
+
+        .font-body {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        .paper-lines {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='24' viewBox='0 0 100 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='12' x2='100' y2='12' stroke='%232E466D' stroke-width='0.5' stroke-opacity='0.03' /%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .crop-mark {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-color: #2782C4;
+        }
+    </style>
+</head>
+
+<body class="font-body text-text-secondary bg-surface-page">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border-subtle shadow-float">
+        <div class="container mx-auto px-6 h-18 flex items-center justify-between py-4">
+            <a href="#" class="flex items-center">
+                <img src="logo.svg" alt="Logo Gráfica Cristalina"
+                    class="h-12 w-auto">
+            </a>
+
+            <div class="hidden md:flex gap-8 text-sm font-medium text-text-primary">
+                <a href="#home" class="hover:text-accent-mid transition-colors">Início</a>
+                <a href="#services" class="hover:text-accent-mid transition-colors">Serviços</a>
+                <a href="#stats" class="hover:text-accent-mid transition-colors">Diferenciais</a>
+                <a href="#location" class="hover:text-accent-mid transition-colors">Localização</a>
+            </div>
+
+            <a href="#pedido"
+                class="bg-accent-primary hover:bg-accent-primary-hover text-white px-6 py-2.5 rounded-button text-sm font-semibold transition-all shadow-md">
+                Fazer Pedido
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (From Site 02) -->
+    <header class="hero" id="home">
+        <!-- Decoration shards -->
+        <div class="shard shard-1"></div>
+        <div class="shard shard-2"></div>
+        <div class="shard shard-3"></div>
+        <div class="shard shard-4"></div>
+
+        <div class="container hero-container fade-in-up">
+            <span class="hero-badge">Precisão, Qualidade e Rapidez</span>
+            <h1 class="hero-title">A excelência impressa<br>em cada detalhe.</h1>
+            <p class="hero-subtitle">Descubra como a Gráfica Cristalina converte suas ideias nos materiais gráficos mais impressionantes do mercado.</p>
+            <div class="hero-actions">
+                <a href="#pedido" class="btn btn-primary">Fazer um Pedido 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#portfolio" class="btn btn-secondary">Ver Catálogo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PORTFOLIO GALLERY -->
+    <section id="portfolio" class="py-24 bg-white text-center relative overflow-hidden reveal">
+        <div class="container mx-auto px-6">
+            <div class="mb-16">
+                <p class="text-accent-mid text-sm font-bold uppercase tracking-[0.2em] mb-3">Veja a qualidade do nosso
+                    trabalho</p>
+                <h2 class="font-display text-4xl lg:text-5xl text-accent-primary uppercase">ALGUNS DOS NOSSOS SERVIÇOS
+                </h2>
+            </div>
+
+            <!-- Gallery Grid: 20 Items (5 rows x 4 cols) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <!-- Row 1 -->
+                <button onclick="openLightbox(0)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/branding.png" alt="Serviço 1"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(1)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/cards.png" alt="Serviço 2"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(2)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/catalogs.png" alt="Serviço 3"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(3)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/branding.png" alt="Serviço 4"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+
+                <!-- Row 2 -->
+                <button onclick="openLightbox(4)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/cards.png" alt="Serviço 5"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(5)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/catalogs.png" alt="Serviço 6"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(6)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/branding.png" alt="Serviço 7"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(7)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/cards.png" alt="Serviço 8"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+
+                <!-- Row 3 -->
+                <button onclick="openLightbox(8)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/catalogs.png" alt="Serviço 9"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(9)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/branding.png" alt="Serviço 10"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(10)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/cards.png" alt="Serviço 11"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(11)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/catalogs.png" alt="Serviço 12"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+
+                <!-- Row 4 -->
+                <button onclick="openLightbox(12)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/branding.png" alt="Serviço 13"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(13)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/cards.png" alt="Serviço 14"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(14)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/catalogs.png" alt="Serviço 15"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(15)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/branding.png" alt="Serviço 16"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+
+                <!-- Row 5 -->
+                <button onclick="openLightbox(16)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/cards.png" alt="Serviço 17"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(17)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/catalogs.png" alt="Serviço 18"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(18)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/branding.png" alt="Serviço 19"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+                <button onclick="openLightbox(19)"
+                    class="aspect-[3/2] bg-surface-card rounded-lg overflow-hidden border border-border-subtle hover:border-accent-mid transition-all group relative">
+                    <img src="assets/cards.png" alt="Serviço 20"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOTO DA LOJA / TRADIÇÃO -->
+    <section id="store-photo" class="py-24 bg-white relative reveal">
+        <div class="container mx-auto px-6 relative">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text / Context -->
+                <div class="space-y-6">
+                    <p class="text-accent-mid text-sm font-bold uppercase tracking-[0.2em]">Nossa Estrutura</p>
+                    <h2 class="font-display text-4xl lg:text-5xl text-accent-primary uppercase leading-tight">Conheça<br>Quem Faz<br>Acontecer</h2>
+                    <p class="text-text-secondary text-lg leading-relaxed max-w-lg">Nossa gráfica física é o coração da nossa operação. Com maquinário moderno e uma equipe dedicada, garantimos a máxima precisão em cada material impresso.</p>
+                    <a href="#location" class="inline-flex items-center gap-2 font-bold text-accent-primary hover:text-accent-mid mt-4 group">
+                        Visite nossa loja
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- The requested card layout -->
+                <div class="relative w-full rounded-[2rem] bg-[#E9EDF3] aspect-video flex flex-col items-center justify-center shadow-sm overflow-visible">
+                    <span class="text-[#8B9DB1] font-bold tracking-[0.1em] uppercase lg:text-3xl">FOTO DA LOJA</span>
+                    
+                    <!-- Badge overlapping bottom right -->
+                    <div class="absolute -bottom-6 -right-2 lg:-bottom-8 lg:-right-8 bg-[#2E466D] text-white rounded-[1.2rem] px-8 py-5 flex items-center gap-4 shadow-float z-10 hover:scale-105 transition-transform">
+                        <span class="font-display text-5xl lg:text-6xl font-bold leading-none">+10</span>
+                        <div class="flex flex-col text-left">
+                            <span class="text-base lg:text-lg leading-tight font-body">Anos de</span>
+                            <span class="text-base lg:text-lg leading-tight font-body">Tradição</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- STATS (Numbers) -->
+    <section id="stats" class="py-24 bg-accent-primary border-y border-white/10 reveal">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <!-- Métrica 1 -->
+            <div class="md:border-r border-white/10 pr-12 last:border-0 last:pr-0">
+                <span class="font-display text-5xl text-white font-bold block mb-4">25+</span>
+                <div class="h-[3px] w-full bg-gradient-brand mb-6 rounded-full overflow-hidden">
+                    <div class="bg-white/20 w-[10%] h-full ml-auto"></div>
+                </div>
+                <h4 class="text-accent-light font-bold mb-2 uppercase tracking-wider text-xs">Anos de Tradição</h4>
+                <p class="text-white/60 text-sm">Experiência que garante a melhor entrega.</p>
+            </div>
+
+            <!-- Métrica 2 -->
+            <div class="md:border-r border-white/10 pr-12 last:border-0 last:pr-0">
+                <span class="font-display text-5xl text-white font-bold block mb-4">15k</span>
+                <div class="h-[3px] w-[80%] bg-gradient-brand mb-6 rounded-full overflow-hidden">
+                    <div class="bg-white/20 w-[5%] h-full ml-auto"></div>
+                </div>
+                <h4 class="text-accent-light font-bold mb-2 uppercase tracking-wider text-xs">Clientes Atendidos
+                </h4>
+                <p class="text-white/60 text-sm">Parceiros satisfeitos em toda a região.</p>
+            </div>
+
+            <!-- Métrica 3 -->
+            <div class="md:border-r border-white/10 pr-12 last:border-0 last:pr-0">
+                <span class="font-display text-5xl text-white font-bold block mb-4">100%</span>
+                <div class="h-[3px] w-[65%] bg-gradient-brand mb-6 rounded-full overflow-hidden">
+                    <!-- Representing accuracy -->
+                </div>
+                <h4 class="text-accent-light font-bold mb-2 uppercase tracking-wider text-xs">Precisão Técnica</h4>
+                <p class="text-white/60 text-sm">Equipamentos de última geração.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES CATALOG GRID (24 Items) -->
+    <section id="catalog" class="py-24 bg-surface-footer relative overflow-hidden reveal">
+        <!-- Subtle Grid Pattern Background -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="small-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#60B3E3" stroke-width="1" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#small-grid)" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-accent-light text-sm font-bold uppercase tracking-[0.2em] mb-3">Veja alguns dos</p>
+                <h2 class="font-display text-4xl lg:text-5xl text-white uppercase tracking-tight mb-4">NOSSOS SERVIÇOS</h2>
+                <p class="text-white/60 text-sm">Clique em qualquer serviço para visualizar a tabela de preços referência.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+                <!-- Helper function for the card template -->
+                <script>
+                    const services = [
+                        { name: "Impressões em Geral", icon: "printer" },
+                        { name: "Adesivos e Rótulos", icon: "sticker" },
+                        { name: "Apostilas", icon: "book-open" },
+                        { name: "Blocos e Talões", icon: "file-text" },
+                        { name: "Cartões de Visita", icon: "credit-card" },
+                        { name: "Panfletos", icon: "layers" },
+                        { name: "Cartazes", icon: "megaphone" },
+                        { name: "Livretos", icon: "book" },
+                        { name: "Placas", icon: "square" },
+                        { name: "Agendas", icon: "calendar" },
+                        { name: "Cadernos", icon: "notebook" },
+                        { name: "Banners", icon: "image" },
+                        { name: "Brindes Corporativos", icon: "gift" },
+                        { name: "Cardápios", icon: "utensils" },
+                        { name: "Canecas", icon: "coffee" },
+                        { name: "Quadros", icon: "frame" },
+                        { name: "Tags e Etiquetas", icon: "tag" },
+                        { name: "Impressão de Fotos", icon: "camera" },
+                        { name: "Envelopes", icon: "mail" },
+                        { name: "Pastas", icon: "folder" },
+                        { name: "Crachás", icon: "contact" },
+                        { name: "Convites", icon: "send" },
+                        { name: "Calendários", icon: "calendar-days" },
+                        { name: "Comandas", icon: "list-checks" }
+                    ];
+
+                    document.write(services.map(s => `
+                        <button onclick="showServicePrice('${s.name}')" class="group p-1 border border-accent-mid/30 rounded-xl hover:border-accent-light transition-all duration-300 w-full text-left">
+                            <div class="h-40 bg-accent-primary/20 backdrop-blur-sm border border-accent-mid/30 rounded-lg flex flex-col items-center justify-center p-6 text-center group-hover:bg-accent-primary/40 transition-all relative overflow-hidden">
+                                <!-- Grid inner texture -->
+                                <div class="absolute inset-0 opacity-[0.05] pointer-events-none">
+                                    <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#small-grid)" /></svg>
+                                </div>
+                                <div class="text-accent-light mb-4 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                    <i data-lucide="${s.icon}" class="w-10 h-10 stroke-[1.5]"></i>
+                                </div>
+                                <span class="text-white font-medium text-sm lg:text-base leading-tight relative z-10 uppercase tracking-wide">${s.name}</span>
+                            </div>
+                        </button>
+                    `).join(''));
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Pedido -->
+    <section class="pedido-section" id="pedido">
+        <div class="container mx-auto px-6">
+            <div class="pedido-container fade-in-up">
+                <div class="pedido-info">
+                    <h2>Pronto para iniciar seu projeto?</h2>
+                    <p>Preencha de forma rápida e segura. A mágica acontece quando direcionamos tudo mastigado direto para o WhatsApp de nossa equipe de vendas.</p>
+                    <div class="safe-seal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        Ambiente 100% Protegido
+                    </div>
+                </div>
+
+                <div class="pedido-form-box">
+                    <form id="orderForm" class="order-form">
+                        <div class="form-group">
+                            <label for="nome">Seu Nome *</label>
+                            <input type="text" id="nome" name="nome" placeholder="Como devemos chamá-lo?" required>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-half">
+                                <label for="data">Data de Entrega *</label>
+                                <input type="date" id="data" name="data" required>
+                            </div>
+                            <div class="col-half">
+                                <label for="servico">Serviço *</label>
+                                <select id="servico" name="servico" required>
+                                    <option value="" disabled selected>Selecione uma opção</option>
+                                    <option value="Cartão de Visita">Cartão de Visita</option>
+                                    <option value="Adesivos Rótulos">Adesivos / Rótulos</option>
+                                    <option value="Panfletos / Flyers">Panfletos / Flyers</option>
+                                    <option value="Lonas / Banners">Lonas / Banners</option>
+                                    <option value="Envelopes / Timbrados">Envelopes / Timbrados</option>
+                                    <option value="Outro Serviço">Outro Serviço (Informar nas Obs)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="observacao">Observações (Quantidade, papel, cores, etc.)</label>
+                            <textarea id="observacao" name="observacao" rows="4" placeholder="Ex: Preciso de 1.000 unidades papel couché brilho..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-whatsapp w-full">
+                            Solicitar pelo WhatsApp
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" class="whatsapp-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (Google Reviews Style) -->
+    <section id="testimonials" class="py-24 bg-white relative overflow-hidden reveal">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="flex text-yellow-400">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <span class="text-text-primary font-bold">4.9 / 5.0</span>
+                </div>
+                <h2 class="font-display text-4xl lg:text-5xl text-accent-primary uppercase mb-4">O que nossos clientes
+                    dizem</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Confira os depoimentos de quem confia na Gráfica
+                    Cristalina para seus projetos mais importantes.</p>
+            </div>
+
+            <div class="relative px-4 lg:px-12">
+                <!-- Carousel Buttons -->
+                <button onclick="moveCarousel(-1)"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-border-subtle p-3 rounded-full shadow-md text-accent-primary hover:bg-accent-subtle transition-all">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <button onclick="moveCarousel(1)"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-border-subtle p-3 rounded-full shadow-md text-accent-primary hover:bg-accent-subtle transition-all">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Carousel Container -->
+                <div class="overflow-hidden">
+                    <div id="testimonial-track" class="flex transition-transform duration-500 ease-out gap-6">
+                        <!-- Cards will be populated by script or hardcoded -->
+                        <script>
+                            const reviews = [
+                                { name: "Pedro Silva", text: "Excelente atendimento e qualidade de impressão impecável. Recomendo muito!", date: "há 2 semanas" },
+                                { name: "Mariana Oliveira", text: "Os folders ficaram maravilhosos. Entrega rápida e preço justo. Com certeza voltarei.", date: "há 1 mês" },
+                                { name: "Carlos Santos", text: "Melhor gráfica da região. Profissionalismo e atenção em cada detalhe do projeto.", date: "há 3 meses" },
+                                { name: "Ana Souza", text: "Fiz meus cartões de visita e ficaram perfeitos. Atendimento nota 10 da equipe.", date: "há 2 meses" },
+                                { name: "Ricardo Lima", text: "Qualidade superior e equipe muito prestativa. Vale cada centavo investido.", date: "há 4 meses" }
+                            ];
+
+                            document.write(reviews.map(r => `
+                                <div class="min-w-full md:min-w-[calc(33.333%-16px)] bg-surface-card p-8 rounded-xl border border-border-subtle relative group hover:shadow-hover transition-all duration-300">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-12 h-12 bg-accent-primary/10 rounded-full flex items-center justify-center text-accent-primary font-bold text-lg">
+                                            ${r.name.charAt(0)}
+                                        </div>
+                                        <div>
+                                            <h4 class="text-text-primary font-bold">${r.name}</h4>
+                                            <span class="text-text-muted text-xs uppercase tracking-tighter">${r.date}</span>
+                                        </div>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_\"G\"_logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-20 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div class="flex text-yellow-400 mb-4">
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    </div>
+                                    <p class="text-text-secondary text-sm leading-relaxed italic">"${r.text}"</p>
+                                </div>
+                            `).join(''));
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-surface-card relative overflow-hidden reveal">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl lg:text-5xl text-accent-primary uppercase mb-4">Dúvidas Frequentes</h2>
+                <p class="text-text-secondary">Encontre rapidamente respostas para as perguntas mais comuns dos nossos clientes.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl shadow-sm border border-border-subtle overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-text-primary hover:text-accent-primary transition-colors">
+                        <span>Vocês realizam entregas para outras cidades?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-accent-mid"></i>
+                        </span>
+                    </summary>
+                    <div class="text-text-secondary mt-0 p-6 pt-0 leading-relaxed border-t border-border-subtle">
+                        Sim! Atendemos Igarapava e região. Para outras localidades, realizamos envios via correios ou transportadoras parceiras conforme a necessidade do projeto.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-border-subtle overflow-hidden relative">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-text-primary hover:text-accent-primary transition-colors">
+                        <span>Qual é a quantidade mínima para pedidos?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-accent-mid"></i>
+                        </span>
+                    </summary>
+                    <div class="text-text-secondary mt-0 p-6 pt-0 leading-relaxed border-t border-border-subtle">
+                        Dependemos do produto. Enquanto oferecemos flexibilidade para impressões avulsas, produtos como cartões de visita e panfletos possuem tiragem mínima que garante o melhor custo-benefício (geralmente a partir de 100 unidades).
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-border-subtle overflow-hidden relative">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-text-primary hover:text-accent-primary transition-colors">
+                        <span>Vocês criam a arte do meu material?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-accent-mid"></i>
+                        </span>
+                    </summary>
+                    <div class="text-text-secondary mt-0 p-6 pt-0 leading-relaxed border-t border-border-subtle">
+                        Sim, temos uma equipe de design preparada para tirar sua ideia do papel. O valor da criação da arte é orçado separadamente e você recebe o modelo para aprovação antes da impressão.
+                    </div>
+                </details>
+                
+                <details class="group bg-white rounded-xl shadow-sm border border-border-subtle overflow-hidden relative">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-text-primary hover:text-accent-primary transition-colors">
+                        <span>Qual é o tempo médio de produção?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-accent-mid"></i>
+                        </span>
+                    </summary>
+                    <div class="text-text-secondary mt-0 p-6 pt-0 leading-relaxed border-t border-border-subtle">
+                        O prazo varia de acordo com o escopo e o acabamento do material. Impressões simples podem ser retiradas no mesmo dia, enquanto materiais complexos levam, em média, de 3 a 5 dias úteis após aprovação da arte.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & HOURS -->
+    <section id="location" class="py-24 bg-surface-card paper-lines reveal">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
+            <!-- Opening Hours -->
+            <div class="bg-white p-1 rounded-card shadow-card flex flex-col md:flex-row border border-border-subtle">
+                <div class="w-full md:w-3 bg-accent-primary rounded-l-[10px]"></div>
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <div class="flex items-center gap-2 text-accent-primary mb-1">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                <h3 class="font-display text-2xl">Horário de Funcionamento</h3>
+                            </div>
+                            <p class="text-text-muted text-sm">Atendimento personalizado na loja física.</p>
+                        </div>
+                        <div id="status-badge"
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-border-subtle text-text-muted transition-colors">
+                            Calculando...
+                        </div>
+                    </div>
+
+                    <div id="opening-hours-list" class="space-y-3">
+                        <!-- Days dynamically populated/highlighted with JS -->
+                        <div class="flex justify-between py-2 border-b border-border-subtle/50 day-item" data-day="1">
+                            <span class="text-text-secondary">Segunda a Sexta</span>
+                            <span class="text-text-primary font-semibold">08:00 - 18:00</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-border-subtle/50 day-item" data-day="6">
+                            <span class="text-text-secondary">Sábado</span>
+                            <span class="text-text-primary font-semibold">08:00 - 12:00</span>
+                        </div>
+                        <div class="flex justify-between py-2 day-item" data-day="0">
+                            <span class="text-text-muted">Domingo</span>
+                            <span class="text-text-muted line-through">Fechado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Placeholder / Contact Info -->
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-card border border-border-subtle shadow-card flex gap-6 items-center">
+                    <div class="bg-accent-subtle p-4 rounded-xl text-accent-primary shrink-0">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-xl text-text-primary mb-1">Nossa Sede</h4>
+                        <p class="text-text-secondary leading-relaxed">Av. Dr. Wanderley Ribeiro, 740<br> Jardim Nossa Sra. de Fatima<br> Igarapava - SP | 14540-000</p>
+                        <a href="https://www.google.com/maps/dir//Gr%C3%A1fica+Cristalina/@-20.0424787,-47.7583637,17z" target="_blank" class="inline-flex items-center gap-2 mt-4 text-sm font-bold text-accent-primary hover:text-accent-mid transition-all group">
+                            <i data-lucide="navigation-2" class="w-4 h-4"></i>
+                            Como Chegar
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="rounded-card overflow-hidden shadow-card border border-border-subtle h-[300px] transition-all relative">
+                    <div class="absolute inset-0 bg-accent-primary/5 pointer-events-none"></div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.267232!2d-47.760944!3d-20.0424787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ba8d300623ecc5%3A0xeee2d3abbbe4d98d!2sGr%C3%A1fica%20Cristalina!5e0!3m2!1spt-BR!2sbr!4v1712640000000!5m2!1spt-BR!2sbr"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-20 bg-accent-primary border-t border-white/10 text-center px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-paper-texture"></div>
+        <div class="container mx-auto relative z-10">
+            <h2 class="font-display text-4xl lg:text-5xl text-white mb-6 uppercase tracking-tight">Dê vida às suas ideias hoje</h2>
+            <p class="text-white/80 max-w-2xl mx-auto mb-10 text-lg">Faça como centenas de empresas parceiras que confiam a qualidade da sua comunicação em nossas mãos.</p>
+            <a href="#pedido" class="btn btn-primary px-8 py-4 shadow-float">
+                Fazer um Orçamento Sem Compromisso
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- MODAL DE PREÇOS -->
+    <div id="price-modal" class="fixed inset-0 z-[70] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-surface-page rounded-[1.5rem] w-full max-w-md shadow-float overflow-hidden transform scale-95 transition-transform duration-300" id="price-modal-card">
+            <div class="bg-accent-primary text-white p-6 relative">
+                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4">
+                    <i data-lucide="tag" class="w-6 h-6 text-accent-light"></i>
+                </div>
+                <h3 class="font-display text-2xl mb-1" id="price-modal-title">Nome do Serviço</h3>
+                <p class="text-white/70 text-sm">Tabela referência. Valores sujeitos a alteração.</p>
+                <button onclick="closePriceModal()" class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 pb-8">
+                <div class="bg-surface-card rounded-xl p-6 border border-border-subtle mb-6 text-center">
+                    <span class="text-text-muted text-sm uppercase tracking-widest font-bold mb-2 block">A Partir De</span>
+                    <div class="flex items-start justify-center text-accent-primary">
+                        <span class="text-lg font-bold mt-2">R$</span>
+                        <span class="font-display text-6xl font-black leading-none tracking-tighter" id="price-modal-value">00</span>
+                        <span class="text-lg font-bold mt-auto mb-1 ml-1">,00</span>
+                    </div>
+                </div>
+                
+                <a href="#pedido" onclick="closePriceModal()" class="btn btn-whatsapp w-full !py-3">
+                    Solicitar Orçamento Exato
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-surface-footer text-inverse border-t-2 border-gradient-brand pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.svg" alt="Logo Gráfica Cristalina" class="h-10 w-auto brightness-0 invert opacity-100">
+                    </div>
+                    <p class="text-text-muted max-w-sm mb-8">
+                        Qualidade que você vê e toca. Desde [Ano], unindo tecnologia editorial com a alma do ofício
+                        gráfico.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-white/50 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-white/50 hover:text-white transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-white/50 hover:text-white transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h5 class="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Navegação</h5>
+                    <ul class="space-y-4 text-sm text-text-muted">
+                        <li><a href="#home" class="hover:text-accent-light transition-colors">Início</a></li>
+                        <li><a href="#services" class="hover:text-accent-light transition-colors">Serviços</a></li>
+                        <li><a href="#stats" class="hover:text-accent-light transition-colors">Nossos Números</a></li>
+                        <li><a href="#location" class="hover:text-accent-light transition-colors">Localização</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h5 class="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Contato</h5>
+                    <ul class="space-y-4 text-sm text-text-muted">
+                        <li class="flex gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-accent-light"></i>
+                            (11) 98765-4321
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-accent-light"></i>
+                            contato@graficacristalina.com.br
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-white/5 text-center">
+                <p class="text-[10px] text-text-muted/50 tracking-widest uppercase mb-2">Padrão Cristalina • Garantia de
+                    Precisão</p>
+                <p class="text-xs text-text-muted">© 2024 Gráfica Cristalina. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE FIXED CTA -->
+    <div class="md:hidden fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/550000000000"
+            class="bg-[#25D366] text-white p-4 rounded-full shadow-float flex items-center justify-center animate-bounce">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.405c0 6.555-5.332 11.89-11.888 11.89-2.015 0-3.991-.511-5.741-1.486L0 24zm6.52-4.146c1.513.896 3.012 1.341 4.545 1.341 5.333 0 9.673-4.34 9.673-9.674 0-5.334-4.34-9.674-9.673-9.674-5.334 0-9.673 4.34-9.673 9.674 0 1.62.404 3.149 1.168 4.513l-.526 1.918 2.016-.541zm10.743-6.601c-.114-.112-1.025-.506-1.185-.563s-.273-.084-.388.084c-.115.168-.444.563-.545.674s-.201.127-.315.07c-.114-.056-.481-.177-.916-.564-.339-.3-.567-.671-.634-.784s-.019-.174.037-.231c.051-.051.114-.135.171-.202.057-.068.077-.113.114-.188s.019-.141-.01-.202c-.029-.056-.273-.659-.374-.9s-.202-.19-.276-.194c-.074-.004-.158-.004-.242-.004s-.222.031-.338.158c-.116.126-.444.433-.444 1.056s.454 1.226.516 1.31c.063.085.894 1.365 2.166 1.914.303.131.538.209.722.267.304.096.581.083.799.05.243-.037.747-.305.852-.6s.105-.548.074-.601z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[60] bg-black/95 backdrop-blur-md hidden flex-col transition-all duration-300">
+        <!-- Lightbox Header -->
+        <div class="h-20 flex items-center justify-between px-6 lg:px-12 border-b border-white/5 bg-black/40">
+            <div class="flex items-center gap-6">
+                <span id="lightbox-counter" class="text-white/50 font-mono tracking-widest text-sm">1 / 8</span>
+                <img src="logo.svg" alt="Logo Gráfica Cristalina"
+                    class="h-6 hidden md:block brightness-0 invert opacity-50">
+            </div>
+
+            <div class="flex items-center gap-4 lg:gap-8">
+                <a href="https://wa.me/550000000000"
+                    class="hidden sm:flex items-center gap-2 bg-accent-primary/50 hover:bg-accent-primary text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all border border-white/10">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    WhatsApp
+                </a>
+                <div class="flex items-center gap-2 text-white/40">
+                    <button class="p-2 hover:text-white transition-colors"><i data-lucide="maximize"
+                            class="w-5 h-5"></i></button>
+                    <button class="p-2 hover:text-white transition-colors"><i data-lucide="search"
+                            class="w-5 h-5"></i></button>
+                    <button class="p-2 hover:text-white transition-colors"><i data-lucide="share-2"
+                            class="w-5 h-5"></i></button>
+                    <button onclick="closeLightbox()" class="p-2 hover:text-white transition-colors ml-4">
+                        <i data-lucide="x" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox Content -->
+        <div class="flex-1 relative flex items-center justify-center p-4 lg:p-12 overflow-hidden">
+            <button onclick="changeLightbox(-1)"
+                class="absolute left-4 lg:left-12 z-20 text-white/50 hover:text-white transition-all bg-white/5 hover:bg-white/10 p-4 rounded-full">
+                <i data-lucide="chevron-left" class="w-8 h-8"></i>
+            </button>
+
+            <img id="lightbox-img" src="" alt="View"
+                class="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-500 scale-95 opacity-0">
+
+            <button onclick="changeLightbox(1)"
+                class="absolute right-4 lg:right-12 z-20 text-white/50 hover:text-white transition-all bg-white/5 hover:bg-white/10 p-4 rounded-full">
+                <i data-lucide="chevron-right" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <!-- Lightbox Footer -->
+        <div class="bg-black/60 backdrop-blur-sm py-8 px-6 text-center border-t border-white/5">
+            <h4 id="lightbox-title" class="font-display text-xl text-white mb-2">Qualidade em Impressão</h4>
+            <p class="text-white/40 text-sm italic">Gráfica Cristalina • Tradição de precisão em cada projeto.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>
